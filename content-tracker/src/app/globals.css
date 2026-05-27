@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+
+  /* Palette */
+  --bg: #fbf7f2;
+  --surface: #ffffff;
+  --ink: #3d2e25;
+  --ink-soft: #8a7a6f;
+  --ink-faint: #b8a99d;
+  --line: #eadfcf;
+  --line-soft: #f2e9dc;
+
+  /* Accents */
+  --reactive: #f3b5a3;
+  --reactive-soft: #fbe3dc;
+  --proactive: #b8c9a8;
+  --proactive-soft: #e3ebd9;
+  --accent: #e8a5b8;
+  --accent-strong: #d9859c;
+  --accent-soft: #f8dde4;
+  --posted: #d9c3e0;
+  --posted-soft: #ede0f1;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-fraunces);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+html,
+body {
+  overscroll-behavior-y: none;
+}
+
+/* iOS safe-area: push FAB above the home indicator when installed as a PWA */
+@supports (padding: max(0px)) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
